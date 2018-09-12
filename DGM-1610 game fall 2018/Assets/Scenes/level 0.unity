@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 485230951}
   - component: {fileID: 485230950}
   - component: {fileID: 485230949}
-  - component: {fileID: 485230954}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -215,19 +214,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &485230954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 485230948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2a43704fe994f4db6083734fd491fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 0
-  JumpHeight: 15
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +285,34 @@ Transform:
   m_LocalScale: {x: 0.6855574, y: 0.6855574, z: 0.6855574}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &639905342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 639905343}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639905343
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639905342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.004, y: -0.411, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1572503256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664711864
@@ -5207,7 +5221,7 @@ GameObject:
   - component: {fileID: 1481833092}
   - component: {fileID: 1481833091}
   - component: {fileID: 1481833090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5275,8 +5289,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481833089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.050822638, y: -8.204934, z: 0}
-  m_LocalScale: {x: 37.445145, y: 0.3794304, z: 0.74741393}
+  m_LocalPosition: {x: 0.050822638, y: -8.043, z: 0}
+  m_LocalScale: {x: 37.445145, y: 0.702678, z: 0.74741393}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -5294,6 +5308,7 @@ GameObject:
   - component: {fileID: 1572503253}
   - component: {fileID: 1572503252}
   - component: {fileID: 1572503257}
+  - component: {fileID: 1572503258}
   m_Layer: 0
   m_Name: AnimCube
   m_TagString: Untagged
@@ -5379,7 +5394,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.75, y: 6.5, z: 0}
   m_LocalScale: {x: 2.113177, y: 2.118264, z: 2.118264}
-  m_Children: []
+  m_Children:
+  - {fileID: 639905343}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5390,7 +5406,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1572503251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 799cb145fba676045be73e3deaf9c31e, type: 2}
   m_CullingMode: 0
@@ -5401,6 +5417,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1572503258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572503251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a43704fe994f4db6083734fd491fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 2
+  JumpHeight: 5
+  GroundCheck: {fileID: 639905343}
+  GroundCheckRadius: 0.5
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &2115272625
 GameObject:
   m_ObjectHideFlags: 0
