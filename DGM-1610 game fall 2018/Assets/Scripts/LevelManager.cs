@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
-	private Rigidbody2D Player;
+	public Rigidbody2D Player;
 
 	//Particles
 	public GameObject DeathParticle;
@@ -17,12 +17,12 @@ public class LevelManager : MonoBehaviour {
 	//Point Penalty on Death
 	public int PointPenalty;
 
-	//Store Gravity Value (for float on respawn/resets gravity)
+	//Store Gravity Value (for float/slow on respawn/resets gravity)
 	private float GravityStore;
 
 	// Use this for initialization
 	void Start () {
-		Player = FindObjectOfType<Rigidbody2D> ();
+		// Player = FindObjectOfType<Rigidbody2D> ();
 	}
 
 	//Spawn Delay
@@ -47,5 +47,14 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log ("Player Respawn");
 		//Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
+		//Gravity Restore
+		Player.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
+		//Match Players transform position
+		Player.transform.position = CurrentCheckPoint.transform.position;
+		//Show Player
+		//player.enabled = true;
+		Player.GetComponent<Renderer>().enabled = true;
+		//Generate Spawn Particle
+		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 	}
 }

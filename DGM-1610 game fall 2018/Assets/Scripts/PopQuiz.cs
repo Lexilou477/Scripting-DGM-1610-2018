@@ -6,7 +6,7 @@ public class PopQuiz : MonoBehaviour {
 
 	public int NumberOne;
 	public int NumberTwo;
-	int Total;
+	private int Total;
 
 	//function call
 	public void Add (){
