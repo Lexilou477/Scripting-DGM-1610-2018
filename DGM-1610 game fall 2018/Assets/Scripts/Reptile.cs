@@ -7,7 +7,7 @@ public class Reptile : Animal {
 	public bool Legs;
 	public bool Shell;
 	public Color ScaleColor;
-	
+	public bool Carnevoir;
 
 	// Use this for initialization
 	void Start () {
