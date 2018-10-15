@@ -51,7 +51,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 6
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -94,10 +94,10 @@ TextureImporter:
       name: Ground
       rect:
         serializedVersion: 2
-        x: 735
-        y: 1581
-        width: 216
-        height: 133
+        x: 743
+        y: 1583
+        width: 197
+        height: 124
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
