@@ -5841,7 +5841,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6728,17 +6728,17 @@ Prefab:
     - target: {fileID: 212817754734503318, guid: b7c34c44c5e488e479a0a5c750459948,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.29521182
+      value: 0.7549395
       objectReference: {fileID: 0}
     - target: {fileID: 212817754734503318, guid: b7c34c44c5e488e479a0a5c750459948,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.43566486
+      value: 0.8138671
       objectReference: {fileID: 0}
     - target: {fileID: 212817754734503318, guid: b7c34c44c5e488e479a0a5c750459948,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.5849056
+      value: 0.8207547
       objectReference: {fileID: 0}
     - target: {fileID: 114777557692674840, guid: b7c34c44c5e488e479a0a5c750459948,
         type: 2}
@@ -6896,6 +6896,7 @@ GameObject:
   - component: {fileID: 1626948382}
   - component: {fileID: 1626948381}
   - component: {fileID: 1626948383}
+  - component: {fileID: 1626948384}
   m_Layer: 0
   m_Name: Game Object
   m_TagString: Untagged
@@ -6909,7 +6910,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1626948380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4748184b6d328e43b0ecd241106cb64, type: 3}
   m_Name: 
@@ -6935,12 +6936,25 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1626948380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48b89779f6608cd4bb952e72bbf5fb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Weather: 
+--- !u!114 &1626948384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626948380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32da0db02f2d8145b6d734925a92233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Num: 40
+  Color: Blue
 --- !u!1001 &1637954075
 Prefab:
   m_ObjectHideFlags: 0
@@ -7042,11 +7056,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4524153531896124, guid: b7c34c44c5e488e479a0a5c750459948, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.97
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4524153531896124, guid: b7c34c44c5e488e479a0a5c750459948, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.33
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 4524153531896124, guid: b7c34c44c5e488e479a0a5c750459948, type: 2}
       propertyPath: m_LocalPosition.z
