@@ -6897,6 +6897,7 @@ GameObject:
   - component: {fileID: 1626948381}
   - component: {fileID: 1626948383}
   - component: {fileID: 1626948384}
+  - component: {fileID: 1626948385}
   m_Layer: 0
   m_Name: Game Object
   m_TagString: Untagged
@@ -6955,6 +6956,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Num: 40
   Color: Blue
+  Var: 1000
+  One: 0
+--- !u!114 &1626948385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626948380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6b49f990721484a9e6daf9d93e82d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Num: 0
+  Name: 
+  Fruit: 
+  Loto: 0
+  Light: 0
 --- !u!1001 &1637954075
 Prefab:
   m_ObjectHideFlags: 0
