@@ -9,6 +9,7 @@ public class Switches : MonoBehaviour {
 	public string Fruit;
 	public float Loto;
 	public bool Light;
+	public int Var;
 
 	// Use this for initialization
 	
@@ -106,6 +107,27 @@ public class Switches : MonoBehaviour {
 			break;
 			case false:
 				print("The light is off!");
+			break;
+		}
+
+		switch(Var){
+			case 1:
+				print("You picked option number " + Var);
+			break;
+			case 2:
+				print("You picked option number " + Var);
+			break;
+			case 3:
+				print("You picked option number " + Var);
+			break;
+			case 4:
+				print("You picked option number " + Var);
+			break;
+			case 5:
+				print("You picked option number " + Var);
+			break;
+			default:
+				print("There isn't an option for " + Var);
 			break;
 		}
 	}
