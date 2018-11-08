@@ -31,6 +31,11 @@ public class Projectile : MonoBehaviour {
 			ScoreManager.AddPoints(PointsForKill);
 		}
 
+		
+		Destroy(gameObject);
+	}
+
+	void OnCollisionEnter2D(Collision2D other){
 		Instantiate(ProjectileParticle, transform.position, transform.rotation);
 		Destroy(gameObject);
 	}
