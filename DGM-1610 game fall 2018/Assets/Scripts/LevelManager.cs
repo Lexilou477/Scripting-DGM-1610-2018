@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour {
 		//Hide Player
 		//player.enabled = false;
 		PC.SetActive(false);
-		Player.GetComponent<Renderer>().enabled = false;
+		Player.GetComponent<Renderer> ().enabled = false;
 		//Gravity Reset
 		GravityStore = Player.GetComponent<Rigidbody2D> ().gravityScale;
 		Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour {
 		//Show Player
 		//player.enabled = true;
 		PC.SetActive(true);
-		Player.GetComponent<Renderer>().enabled = true;
+		Player.GetComponent<Renderer> ().enabled = true;
 		//Generate Spawn Particle
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 	}
