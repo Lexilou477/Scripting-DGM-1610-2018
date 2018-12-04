@@ -18,6 +18,8 @@ public class CharacterMove : MonoBehaviour {
 	//Non-Stick Player
 	private float MoveVelocity;
 
+	public Animator Animator;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -52,20 +54,22 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKey (KeyCode.D)){
 			// GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			MoveVelocity = MoveSpeed;
+			Animator.SetFloat("Speed", Mathf.Abs(MoveVelocity));
 		}
 		if(Input.GetKey (KeyCode.A)){
 			// GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			MoveVelocity = -MoveSpeed;
+			Animator.SetFloat("Speed", Mathf.Abs(MoveVelocity));
 		}
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
 		//player flip
 		if (GetComponent<Rigidbody2D>().velocity.x > 0)
-			transform.localScale = new Vector3(5f, 5f, 1f);
+			transform.localScale = new Vector3(.68f, .68f, .13f);
 
 		else if (GetComponent<Rigidbody2D>().velocity.x <0)
-			transform.localScale = new Vector3(-5f, 5f, 1f);
+			transform.localScale = new Vector3(-.68f, .68f, .13f);
 
 	}
 

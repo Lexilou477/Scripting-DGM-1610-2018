@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AmmoCounter : MonoBehaviour {
 
 	public static int Ammo;
-	public static int MaxAmmo;
+	public int MaxAmmo;
 	Text AmmoNumber;
 
 	// Use this for initialization
@@ -17,11 +17,16 @@ public class AmmoCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Ammo <= 0)
+		if (Ammo <= 0){
 			Ammo = 0;
-		
-		
-		AmmoNumber.text = " " + Ammo;
+		}
+		else if (Ammo >= MaxAmmo){
+			Ammo = MaxAmmo;
+		}
+		else {
+			AmmoNumber.text = " " + Ammo;
+		}
+			
 	}
 	public static void AddAmmo (int AddAmmo){
 		Ammo += AddAmmo;
