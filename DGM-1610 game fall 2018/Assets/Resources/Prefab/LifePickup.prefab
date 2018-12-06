@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212196750211290170}
   - component: {fileID: 114258884449379790}
   - component: {fileID: 58291988786322952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LifePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

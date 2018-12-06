@@ -22,7 +22,7 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Animator.SetBool("IsWalking", false);
 	}
 	
 
@@ -39,8 +39,11 @@ public class CharacterMove : MonoBehaviour {
 		}
 
 		//Double jump code
-		if(Grounded)
-			DoubleJump = false;
+		if(Grounded){
+				DoubleJump = false;
+			Animator.SetBool("IsJumping", false);
+		}
+		
 
 		if(Input.GetKeyDown (KeyCode.Space)&& !DoubleJump && !Grounded){
 			Jump();
@@ -54,12 +57,19 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKey (KeyCode.D)){
 			// GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			MoveVelocity = MoveSpeed;
-			Animator.SetFloat("Speed", Mathf.Abs(MoveVelocity));
+			Animator.SetBool("IsWalking", true);
 		}
+		else if (Input.GetKeyUp(KeyCode.D)){
+			Animator.SetBool("IsWalking", false);
+		}
+	
 		if(Input.GetKey (KeyCode.A)){
 			// GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			MoveVelocity = -MoveSpeed;
-			Animator.SetFloat("Speed", Mathf.Abs(MoveVelocity));
+			Animator.SetBool("IsWalking", true);
+		}
+		else if (Input.GetKeyUp(KeyCode.A)){
+			Animator.SetBool("IsWalking", false);
 		}
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
@@ -75,5 +85,6 @@ public class CharacterMove : MonoBehaviour {
 
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
+		Animator.SetBool("IsJumping", true);
 	}
 }
