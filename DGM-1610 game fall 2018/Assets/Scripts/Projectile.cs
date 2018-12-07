@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour {
 	public GameObject ProjectileParticle;
 	public int PointsForKill;
 	public int TimeOut;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,7 @@ public class Projectile : MonoBehaviour {
 			Instantiate(EnemyDeathParticle, other.transform.position, other.transform.rotation);
 			Destroy(other.gameObject);
 			ScoreManager.AddPoints(PointsForKill);
+			
 		}
 
 		
@@ -45,4 +47,5 @@ public class Projectile : MonoBehaviour {
 		Instantiate(ProjectileParticle, transform.position, transform.rotation);
 		Destroy(gameObject);
 	}
+	
 }

@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject CurrentCheckPoint;
 	public Rigidbody2D Player;
 	public GameObject PC;
+	public int LoseLife;
 
 	//Particles
 	public GameObject DeathParticle;
@@ -45,6 +46,8 @@ public class LevelManager : MonoBehaviour {
 		Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		//Point Penalty
 		ScoreManager.AddPoints(-PointPenalty);
+		//Life Penalty
+		LifeCounter.AddLife(-LoseLife);
 		//Debug Message
 		Debug.Log ("Player Respawn");
 		//Respawn Delay

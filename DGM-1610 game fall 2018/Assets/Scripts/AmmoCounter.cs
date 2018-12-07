@@ -9,6 +9,7 @@ public class AmmoCounter : MonoBehaviour {
 	public int MaxAmmo;
 	Text AmmoNumber;
 
+
 	// Use this for initialization
 	void Start () {
 		AmmoNumber = GetComponent<Text>();
@@ -30,5 +31,19 @@ public class AmmoCounter : MonoBehaviour {
 	}
 	public static void AddAmmo (int AddAmmo){
 		Ammo += AddAmmo;
+		PlayerShoot.enableShoot();
 	}
+	public static void LoseAmmo (){
+		if (Ammo > 0){
+			Ammo = Ammo - 1;
+			
+		}
+		else {
+			Ammo = 0;
+			PlayerShoot.disableShoot();
+			
+		}
+	}
+
+
 }
