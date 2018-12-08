@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour {
 	public static int Score;
 	public int WinScore;
 	public Text WinText;
+	
 
 	Text ScoreText;
 
@@ -23,6 +24,7 @@ public class ScoreManager : MonoBehaviour {
 		Score = 0;
 
 		WinText.GetComponent<Text>().enabled = false;
+		
 	}
 	
 	// Update is called once per frame

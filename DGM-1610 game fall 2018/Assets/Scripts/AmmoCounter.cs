@@ -20,9 +20,11 @@ public class AmmoCounter : MonoBehaviour {
 	void Update () {
 		if (Ammo <= 0){
 			Ammo = 0;
+			AmmoNumber.text = " " + Ammo;
 		}
 		else if (Ammo >= MaxAmmo){
 			Ammo = MaxAmmo;
+			AmmoNumber.text = " " + Ammo;
 		}
 		else {
 			AmmoNumber.text = " " + Ammo;
