@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour {
 	public GameObject ProjectileParticle;
 	public int PointsForKill;
 	public int TimeOut;
+	public GameObject Ammo;
 	
 
 	// Use this for initialization
@@ -18,6 +19,7 @@ public class Projectile : MonoBehaviour {
 
 		EnemyDeathParticle = Resources.Load("Prefab/Generic") as GameObject;
 		ProjectileParticle = Resources.Load("Prefab/Generic") as GameObject;
+		Ammo = Resources.Load("Prefab/AmmoPickup") as GameObject;
 
 		if(PC.transform.localScale.x < 0)
 			Speed = -Speed;
@@ -36,6 +38,7 @@ public class Projectile : MonoBehaviour {
 			Instantiate(EnemyDeathParticle, other.transform.position, other.transform.rotation);
 			Destroy(other.gameObject);
 			ScoreManager.AddPoints(PointsForKill);
+			Instantiate(Ammo, other.transform.position, other.transform.rotation);
 			
 		}
 
