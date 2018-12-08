@@ -11,6 +11,9 @@ public class Projectile : MonoBehaviour {
 	public int PointsForKill;
 	public int TimeOut;
 	public GameObject Ammo;
+	public GameObject Life;
+	public GameObject Coin;
+
 	
 
 	// Use this for initialization
@@ -20,6 +23,8 @@ public class Projectile : MonoBehaviour {
 		EnemyDeathParticle = Resources.Load("Prefab/Generic") as GameObject;
 		ProjectileParticle = Resources.Load("Prefab/Generic") as GameObject;
 		Ammo = Resources.Load("Prefab/AmmoPickup") as GameObject;
+		Life = Resources.Load("Prefab/LifePickup") as GameObject;
+		Coin = Resources.Load("Prefab/Coin") as GameObject;
 
 		if(PC.transform.localScale.x < 0)
 			Speed = -Speed;
@@ -33,16 +38,23 @@ public class Projectile : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Enemy"){
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.tag == "Enemy") {
 			Instantiate(EnemyDeathParticle, other.transform.position, other.transform.rotation);
 			Destroy(other.gameObject);
 			ScoreManager.AddPoints(PointsForKill);
-			Instantiate(Ammo, other.transform.position, other.transform.rotation);
-			
-		}
-
-		
+			int RandNum = Random.Range (0, 3);
+			if (RandNum == 0) {
+				Instantiate(Ammo, other.transform.position, other.transform.rotation);
+			}
+			else if (RandNum == 1) {
+				Instantiate(Life, other.transform.position, other.transform.rotation);
+			} 
+			else  {
+				Instantiate(Coin, other.transform.position, other.transform.rotation);
+			}
+					
+		}		
 		Destroy(gameObject);
 	}
 
